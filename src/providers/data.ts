@@ -9,7 +9,7 @@ export const dataProvider: DataProvider = {
         return { data: [] as TData[], total: 0 };
       }
     return {
-      data: mockSubjects as TData[],
+      data: mockSubjects as unknown as TData[],
       total: mockSubjects.length,
     };
     },

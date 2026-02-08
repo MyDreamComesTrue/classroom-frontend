@@ -8,6 +8,7 @@ export const mockSubjects: Subject[] = [
     department: "Computer Science",
     description:
       "An introductory course covering the fundamentals of programming, algorithms, and computational thinking.",
+    createdAt: "2026-02-01T00:00:00Z",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const mockSubjects: Subject[] = [
     department: "Business Administration",
     description:
       "This course explores core management principles including planning, organization, leadership, and control in modern organizations.",
+    createdAt: "2026-02-02T00:00:00Z"
   },
   {
     id: 3,
@@ -24,5 +26,6 @@ export const mockSubjects: Subject[] = [
     department: "Engineering",
     description:
       "Focuses on effective written and oral communication skills for engineers, including reports, presentations, and documentation.",
+    createdAt: "2026-02-03T00:00:00Z",
   },
 ];
