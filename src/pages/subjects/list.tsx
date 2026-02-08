@@ -99,7 +99,7 @@ const SubjectsList = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">
-                  All Departements
+                  All Departments
                 </SelectItem>
                 {DEPARTMENT_OPTIONS.map(department => (
                   <SelectItem
