@@ -5,7 +5,7 @@ import {useBack} from "@refinedev/core";
 import {Separator} from "@/components/ui/separator.tsx";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { useForm } from "@refinedev/react-hook-form"
 import {classSchema} from "@/lib/schema.ts";
 import * as z from "zod";
 
@@ -79,7 +79,7 @@ const Create = () => {
 
   const bannerPublicId = form.watch('bannerPubId');
 
-  const setBannerImage = (field, file) => {
+  const setBannerImage = (field: { onChange: (value: string) => void }, file: { url: string; publicId: string } | null) => {
     if(file) {
       field.onChange(file.url);
       form.setValue('bannerPubId', file.publicId, {
@@ -132,13 +132,13 @@ const Create = () => {
                       <FormControl>
                         <UploadWidget
                           value={field.value ? { url: field.value, publicId: bannerPublicId ?? ''} : null}
-                          onChange={(file: any, field: any) => setBannerImage(file, field)}
+                          onChange={(file) => setBannerImage(field, file)}
                         />
                       </FormControl>
                       <FormMessage />
-                      {errors.bannerCldPubId && !errors.bannerUrl && (
+                      {errors.bannerPubId && !errors.bannerUrl && (
                         <p className="text-destructive">
-                          {errors.bannerCldPubId.message?.toString()}
+                          {errors.bannerPubId.message?.toString()}
                         </p>
                       )}
                     </FormItem>

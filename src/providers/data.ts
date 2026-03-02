@@ -1,7 +1,7 @@
 import {createDataProvider, CreateDataProviderOptions} from "@refinedev/rest";
 import {BACKEND_BASE_URL} from "@/constants";
 import {ListResponse} from "@/types";
-import {RecordType} from "zod";
+
 if (!BACKEND_BASE_URL) {
   throw new Error("BACKEND_BASE_URL environment variable is not configured. Please set VITE_BACKEND_BASE_URL in your .env file.");
 }
@@ -17,14 +17,17 @@ const options: CreateDataProviderOptions = {
 
     filters?.forEach((filter) => {
       const field = 'field' in filter ? filter.field : '';
-
       const value = String(filter.value);
 
       if (resource === 'subjects') {
-        if(field === 'department') params.department = value;
-          if(field === 'name' || field === 'code') params.search = value;
+        if (field === 'department') {
+          params.department = value;
+        }
+        if (field === 'name' || field === 'code') {
+          params.search = value;
+        }
       }
-    })
+    });
 
       return params;
   },

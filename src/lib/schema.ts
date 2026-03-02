@@ -53,7 +53,7 @@ export const classSchema = z.object({
   bannerUrl: z
     .string({ required_error: "Class banner is required" })
     .min(1, "Class banner is required"),
-  bannerCldPubId: z
+  bannerPubId: z
     .string({ required_error: "Banner reference is required" })
     .min(1, "Banner reference is required"),
   inviteCode: z.string().optional(),

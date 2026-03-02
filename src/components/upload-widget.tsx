@@ -34,7 +34,7 @@ const UploadWidget = ({ value = null, onChange, disabled = false}) => {
         maxFileSize: 3000000,
         clientAllowedFormats: ['png', 'jpg', 'webp']
       }, (error, result) => {
-        if(!error && result.event === "success") {
+        if (!error && result?.event === "success") {
           const payload: UploadWidgetValue = {
             url: result.info.secure_url,
             publicId: result.info.public_id,
@@ -44,8 +44,7 @@ const UploadWidget = ({ value = null, onChange, disabled = false}) => {
           setDeleteToken(result.info.delete_token ?? null);
 
         }
-
-        onChangeRef.current?.(payload);
+        onChangeRef.current?.(null);
       });
 
       return true;
@@ -88,7 +87,7 @@ const UploadWidget = ({ value = null, onChange, disabled = false}) => {
           <UploadCloud className="icon" />
           <div>
             <p>Click to upload photo</p>
-            <p>PNG, JPG up to 5MB</p>
+            <p>PNG, JPG, WEBP up to 3MB</p>
           </div>
         </div>
       </div>}
