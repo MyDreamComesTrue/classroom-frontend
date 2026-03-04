@@ -18,7 +18,7 @@ import { Breadcrumb } from "@/components/refine-ui/layout/breadcrumb";
 import { DataTable } from "@/components/refine-ui/data-table/data-table";
 import { ShowButton } from "@/components/refine-ui/buttons/show";
 
-import { Subject } from "@/types";
+import { Subject, Department } from "@/types"; // Import Department type
 import { DEPARTMENT_OPTIONS } from "@/constants";
 
 const SubjectListPage = () => {
@@ -49,9 +49,10 @@ const SubjectListPage = () => {
         accessorKey: "department",
         size: 150,
         header: () => <p className="column-title">Department</p>,
-        cell: ({ getValue }) => (
-          <Badge variant="secondary">{getValue<string>()}</Badge>
-        ),
+        cell: ({ getValue }) => {
+          const department = getValue<Department>(); // Get the Department object
+          return <Badge variant="secondary">{department.name}</Badge>; // Render the department name
+        },
       },
       {
         id: "description",

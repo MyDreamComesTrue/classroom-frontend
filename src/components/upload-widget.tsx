@@ -42,9 +42,8 @@ const UploadWidget = ({ value = null, onChange, disabled = false}) => {
 
           setPreview(payload);
           setDeleteToken(result.info.delete_token ?? null);
-
+          onChangeRef.current?.(payload);
         }
-        onChangeRef.current?.(null);
       });
 
       return true;

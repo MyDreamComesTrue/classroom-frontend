@@ -1,6 +1,25 @@
 import {createDataProvider, CreateDataProviderOptions} from "@refinedev/rest";
 import {BACKEND_BASE_URL} from "@/constants";
 import {ListResponse} from "@/types";
+import {HttpError} from "@refinedev/core";
+
+const buildHttpError = async (response: Response): Promise<HttpError> => {
+  let message = 'Request failed.';
+
+  try {
+    const payload = (await response.json()) as { message?: string }
+
+    if (payload?.message) message = payload.message;
+  } catch {
+    // Ignore errors
+  }
+
+  return {
+    message,
+    statusCode: response.status
+  }
+
+}
 
 if (!BACKEND_BASE_URL) {
   throw new Error("BACKEND_BASE_URL environment variable is not configured. Please set VITE_BACKEND_BASE_URL in your .env file.");
@@ -33,12 +52,16 @@ const options: CreateDataProviderOptions = {
   },
 
     mapResponse: async (response) => {
+      if(!response.ok) throw await buildHttpError(response);
+
       const payload: ListResponse = await response.clone().json();
 
       return payload.data ?? [];
     },
 
     getTotalCount: async (response) => {
+      if(!response.ok) throw await buildHttpError(response);
+
       const payload: ListResponse = await response.clone().json();
 
       return payload.pagination?.total ?? payload.data?.length ?? 0;
