@@ -9,14 +9,14 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { ListView } from "@/components/refine-ui/views/list-view";
-import { CreateButton } from "@/components/refine-ui/buttons/create";
-import { Breadcrumb } from "@/components/refine-ui/layout/breadcrumb";
-import { DataTable } from "@/components/refine-ui/data-table/data-table";
-import { ShowButton } from "@/components/refine-ui/buttons/show";
+} from "@/components/ui/select.js";
+import { Badge } from "@/components/ui/badge.js";
+import { Input } from "@/components/ui/input.js";
+import { ListView } from "@/components/refine-ui/views/list-view.js";
+import { CreateButton } from "@/components/refine-ui/buttons/create.js";
+import { Breadcrumb } from "@/components/refine-ui/layout/breadcrumb.js";
+import { DataTable } from "@/components/refine-ui/data-table/data-table.js";
+import { ShowButton } from "@/components/refine-ui/buttons/show.js";
 
 import { Subject, Department } from "@/types"; // Import Department type
 import { DEPARTMENT_OPTIONS } from "@/constants";

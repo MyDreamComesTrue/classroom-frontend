@@ -1,12 +1,12 @@
-import {CreateView} from "@/components/refine-ui/views/create-view.tsx";
-import {Breadcrumb} from "@/components/refine-ui/layout/breadcrumb.tsx";
-import {Button} from "@/components/ui/button.tsx";
+import {CreateView} from "@/components/refine-ui/views/create-view.js";
+import {Breadcrumb} from "@/components/refine-ui/layout/breadcrumb.js";
+import {Button} from "@/components/ui/button.js";
 import {useBack} from "@refinedev/core";
-import {Separator} from "@/components/ui/separator.tsx";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx"
+import {Separator} from "@/components/ui/separator.js";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.js"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "@refinedev/react-hook-form"
-import {classSchema} from "@/lib/schema.ts";
+import {classSchema} from "@/lib/schema.js";
 import * as z from "zod";
 
 import {
@@ -19,13 +19,13 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import {Label} from "@/components/ui/label.tsx";
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.tsx";
-import {Textarea} from "@/components/ui/textarea.tsx";
+import {Label} from "@/components/ui/label.js";
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.js";
+import {Textarea} from "@/components/ui/textarea.js";
 
 import {Loader2} from "lucide-react";
 
-import UploadWidget from "@/components/upload-widget.tsx";
+import UploadWidget from "@/components/upload-widget.js";
 
 
 const Create = () => {

@@ -8,17 +8,17 @@ import routerProvider, {
 } from "@refinedev/react-router";
 import {BrowserRouter, Outlet, Route, Routes} from "react-router";
 import "./App.css";
-import { Toaster } from "./components/refine-ui/notification/toaster";
-import { useNotificationProvider } from "./components/refine-ui/notification/use-notification-provider";
-import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
-import { dataProvider } from "./providers/data";
-import Dashboard from "@/pages/dashboard.tsx";
+import { Toaster } from "./components/refine-ui/notification/toaster.js";
+import { useNotificationProvider } from "./components/refine-ui/notification/use-notification-provider.js";
+import { ThemeProvider } from "./components/refine-ui/theme/theme-provider.js";
+import { dataProvider } from "./providers/data.js";
+import Dashboard from "@/pages/dashboard.js";
 import {BookOpen, GraduationCap, Home} from "lucide-react";
-import {Layout} from "@/components/refine-ui/layout/layout.tsx";
-import SubjectsList from "@/pages/subjects/list.tsx";
-import SubjectsCreate from "@/pages/subjects/create.tsx";
-import ClassesList from "@/pages/classes/list.tsx";
-import ClassesCreate from "@/pages/classes/create.tsx";
+import {Layout} from "@/components/refine-ui/layout/layout.js";
+import SubjectsList from "@/pages/subjects/list.js";
+import SubjectsCreate from "@/pages/subjects/create.js";
+import ClassesList from "@/pages/classes/list.js";
+import ClassesCreate from "@/pages/classes/create.js";
 function App() {
   return (
     <BrowserRouter>
